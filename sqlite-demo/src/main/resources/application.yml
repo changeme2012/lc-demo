@@ -1,0 +1,29 @@
+spring:
+  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:data/tag.db
+  sql:
+    init:
+      data-locations: classpath:db/data.sql
+      schema-locations:  classpath:db/schema.sql
+      mode: always
+      continue-on-error: false
+      encoding: utf-8
+
+server:
+  port: 8080
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+
+
+
+
